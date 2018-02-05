@@ -1,0 +1,22 @@
+{
+  "id": "10001",
+  "assetNo": "ASST-2017020001",
+  "description": "HP Compaq 1001GXT",
+  "registeredDate": "2017-04-21T18:25:43-05:00",
+  "category": "COMPUTER",
+  "status": "LOANED",
+  "owner": {
+    "staffNo": "STF-00101",
+    "name": "Johari Jantan"
+  },
+  "maintenances": [
+    {
+      "referenceNo": "MTN-101210",
+      "description": "Fixed fan"
+    },
+    {
+      "referenceNo": "MTN-134440",
+      "description": "Fixed CPU"
+    }
+  ]
+}

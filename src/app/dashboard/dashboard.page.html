@@ -1,0 +1,78 @@
+<td-layout-nav title="Asset Management System" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span>Asset Management System</span>
+    <span flex></span>
+    <a mat-icon-button matTooltip="Profile">
+      <mat-icon>person</mat-icon>
+    </a>
+    <span>Johari Jantan</span>
+  </div>
+
+  <div mat-content flex>
+    <div layout-gt-md="row">
+      <div flex-gt-md="70">
+        <mat-card>
+          <mat-card-title>Assets</mat-card-title>
+          <mat-card-subtitle>List of assets</mat-card-subtitle>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <ng-template let-asset let-last="last" ngFor [ngForOf]="assets$ | async">
+              <mat-list-item>
+                <h3 mat-line> {{asset?.description}} </h3>
+                <span flex></span>
+                <span flex="80" layout-gt-xs="row">
+                  <div class="mat-caption tc-grey-700" flex-gt-xs="30"> {{ asset?.assetNo }} </div>
+                  <div class="mat-caption tc-grey-700" flex-gt-xs="50"> {{ asset?.registeredDate | date:'shortDate' }} </div>
+                </span>
+                <span>
+                  <!--button-->
+                  <button mat-icon-button (click)="viewAsset(asset)">
+                    <mat-icon>arrow_forward</mat-icon>
+                  </button>
+              </span>
+              </mat-list-item>
+              <mat-divider *ngIf="!last"></mat-divider>
+            </ng-template>
+          </mat-list>
+        </mat-card>
+
+      </div>
+      <div flex-gt-md="30">
+        <mat-card>
+          <mat-nav-list flex dense>
+            <mat-list-item>
+              <mat-icon mat-list-avatar>gavel</mat-icon>
+              <h4 mat-line>Deactivate</h4>
+              <p mat-line>Deactivate this record</p>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-avatar>check</mat-icon>
+              <h4 mat-line>Activate</h4>
+              <p mat-line>Activate this record</p>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-avatar>delete</mat-icon>
+              <h4 mat-line>Delete</h4>
+              <p mat-line>Delete this record</p>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <td-layout-footer>
+    <div layout="row" layout-align="start center">
+      <span class="mat-caption">Copyright &copy; 2017 Terang LLP. All rights reserved</span>
+      <span flex></span>
+    </div>
+  </td-layout-footer>
+</td-layout-nav>
+<a mat-fab color="accent" class="mat-fab-bottom-right fixed z-3" (click)="showAddDialog()">
+  <mat-icon>add</mat-icon>
+</a>
+
+

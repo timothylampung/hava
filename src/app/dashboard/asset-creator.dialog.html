@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Asset Editor</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editorForm">
+    <div layout="row" class="pad-bottom" flex>
+      <mat-form-field flex>
+        <input matInput
+               placeholder="Asset No"
+               formControlName="assetNo"
+               type="text"
+               flex/>
+      </mat-form-field>
+    </div>
+    <div layout="row" class="pad-bottom" flex>
+      <mat-form-field flex>
+        <input matInput
+               placeholder="Description"
+               formControlName="description"
+               type="text"
+               flex/>
+      </mat-form-field>
+    </div>
+    <div layout="row" class="pad-bottom" flex>
+      <mat-form-field flex>
+        <input matInput type="number" placeholder="Cost" formControlName="cost">
+      </mat-form-field>
+    </div>
+    <div layout="row" class="pad-bottom" flex>
+      <mat-form-field flex>
+        <mat-select placeholder="Status" formControlName="status" flex>
+          <mat-option value="AVAILABLE">AVAILABLE</mat-option>
+          <mat-option value="LOANED">LOANED</mat-option>
+          <mat-option value="UNDER_MAINTENANCE">UNDER MAINTENANCE</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div layout="row" class="pad-bottom" flex>
+      <mat-form-field flex>
+        <mat-select placeholder="Category" formControlName="category" flex>
+          <mat-option value="FURNITURE">FURNITURE</mat-option>
+          <mat-option value="VEHICLE">VEHICLE</mat-option>
+          <mat-option value="COMPUTER">COMPUTER</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="save(editorForm.value)" [disabled]="!editorForm.valid">
+    Add
+  </button>
+</div>
+

@@ -1,0 +1,51 @@
+<td-layout-nav title="Asset Management System" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span>Asset Management System</span>
+    <span flex></span>
+    <a mat-icon-button matTooltip="Profile">
+      <mat-icon>person</mat-icon>
+    </a>
+    <span>Johari Jantan</span>
+  </div>
+
+
+  <td-layout-card-over>
+    <div layout="row" layout-align="start center">
+      <div>
+        <mat-card-title>Asset {{(asset$|async)?.assetNo}}</mat-card-title>
+        <mat-card-subtitle>Asset Detail</mat-card-subtitle>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div layout="column" class="inset" flex>
+
+      <!--asset information-->
+      <h3 mat-line>Asset Information</h3>
+      <div layout="row" class="mat-padding" flex>
+        <div layout="column" flex="30">
+          <p class="tc-grey-500">Asset No :</p>
+          <p class="tc-grey-500">Description :</p>
+        </div>
+        <div layout="column" flex="70">
+          <p>{{(asset$|async)?.assetNo}}</p>
+          <p>{{(asset$|async)?.description}}</p>
+        </div>
+      </div>
+    </div>
+
+    <mat-card-actions align="end">
+      <button mat-button="" color="primary" (click)="goBack()">Back</button>
+    </mat-card-actions>
+  </td-layout-card-over>
+
+  <td-layout-footer>
+    <div layout="row" layout-align="start center">
+      <span class="mat-caption">Copyright &copy; 2017 Terang LLP. All rights reserved</span>
+      <span flex></span>
+    </div>
+  </td-layout-footer>
+</td-layout-nav>

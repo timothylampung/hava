@@ -1,0 +1,34 @@
+[
+  {
+    "id": "10001",
+    "assetNo": "ASST-2017020001",
+    "description": "HP Compaq 1001GXT",
+    "registeredDate": "2017-04-21T18:25:43-05:00",
+    "category": "COMPUTER",
+    "status": "AVAILABLE"
+  },
+  {
+    "id": "10002",
+    "assetNo": "ASST-2017020002",
+    "description": "HP Compaq Desktop Pro",
+    "registeredDate": "2017-04-21T18:25:43-05:00",
+    "category": "COMPUTER",
+    "status": "AVAILABLE"
+  },
+  {
+    "id": "10003",
+    "assetNo": "ASST-2017020002",
+    "description": "Datsun Sunny DX120Y",
+    "registeredDate": "2017-04-21T18:25:43-05:00",
+    "category": "VEHICLE",
+    "status": "AVAILABLE"
+  },
+  {
+    "id": "10003",
+    "assetNo": "ASST-2017020002",
+    "description": "Datsun Sunny DX120Y",
+    "registeredDate": "2017-04-21T18:25:43-05:00",
+    "category": "VEHICLE",
+    "status": "UNDER_MAINTENANCE"
+  }
+]
