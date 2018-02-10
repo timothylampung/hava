@@ -11,6 +11,10 @@ import {AssetDetailPage} from './dashboard/asset-detail.page';
 import {DashboardPage} from './dashboard/dashboard.page';
 import {AssetCreatorDialog} from './dashboard/asset-creator.dialog';
 
+import {AngularFireModule} from 'angularfire2'
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {environment} from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +29,9 @@ import {AssetCreatorDialog} from './dashboard/asset-creator.dialog';
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,
+    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [AssetService],
   entryComponents: [AssetCreatorDialog],

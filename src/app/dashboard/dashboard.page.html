@@ -19,9 +19,9 @@
           <mat-card-subtitle>List of assets</mat-card-subtitle>
           <mat-divider></mat-divider>
           <mat-list>
-            <ng-template let-asset let-last="last" ngFor [ngForOf]="assets$ | async">
+            <ng-template  let i = "index" ngFor [ngForOf]="users.length">
               <mat-list-item>
-                <h3 mat-line> {{asset?.description}} </h3>
+                <h3 mat-line> {{user[0]}} </h3>
                 <span flex></span>
                 <span flex="80" layout-gt-xs="row">
                   <div class="mat-caption tc-grey-700" flex-gt-xs="30"> {{ asset?.assetNo }} </div>
