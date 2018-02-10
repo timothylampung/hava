@@ -14,6 +14,8 @@ import {AssetCreatorDialog} from './dashboard/asset-creator.dialog';
 import {AngularFireModule} from 'angularfire2'
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {environment} from '../environments/environment';
+import {UserService} from '../services/user.service';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {environment} from '../environments/environment';
     HttpClientModule,
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [AssetService],
   entryComponents: [AssetCreatorDialog],

@@ -11,7 +11,7 @@ export const environment = {
     authDomain: "hava-5e348.firebaseapp.com",
     databaseURL: "https://hava-5e348.firebaseio.com",
     projectId: "hava-5e348",
-    storageBucket: "",
+    storageBucket: "hava-5e348.appspot.com",
     messagingSenderId: "287104892635"
   }
 

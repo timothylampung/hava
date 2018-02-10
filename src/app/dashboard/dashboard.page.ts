@@ -7,6 +7,7 @@ import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material';
 import {AssetCreatorDialog} from './asset-creator.dialog';
 import {User} from './user.interface';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from 'angularfire2/firestore';
 
 @Component({
   selector: 'qs-dashboard',
@@ -14,13 +15,21 @@ import {AngularFireDatabase} from 'angularfire2/database';
 })
 export class DashboardPage implements OnInit, OnDestroy {
 
-users : User[] = [];
-  user : Observable<User[]>;
+
+  user$ : Observable<User[]>;
   assets$: Observable<Asset[]>;
   creatorDialogRef: MatDialogRef<AssetCreatorDialog>;
+  postsCol: AngularFirestoreCollection<User>;
+  posts: Observable<User[]>;
+  loadUsers():void{
+    this.postsCol = this.afs.collection('users');
+    this.posts = this.postsCol.valueChanges();
+
+  }
 
   // constructor
   constructor(private db : AngularFireDatabase,
+              private afs : AngularFirestore,
               private assetService: AssetService,
               private router: Router,
               private route: ActivatedRoute,
@@ -44,19 +53,7 @@ users : User[] = [];
   }
 
 
-loadUsers():void{
-    var x = this.db.list('users');
-    x.snapshotChanges().subscribe(item=>{
-      item.forEach((element =>{
-        var y = element.payload.toJSON();
-        y["$key"] = element.key;
-        //this.users = element.payload.toJSON();
-        this.users.push(y as User);
-        console.log(y);
-        console.log(this.users);
-      }))
-    });
-}
+
 
   ngOnDestroy(): void {
     // no op
