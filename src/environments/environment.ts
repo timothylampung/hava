@@ -7,12 +7,12 @@ export const environment = {
   production: false,
   endpoint : '/data',
   firebaseConfig :{
-    apiKey: "AIzaSyB1CNUz5H8cKbOoR_OvaW8TR7MoJBxw_Uw",
-    authDomain: "angular5crud-3897c.firebaseapp.com",
-    databaseURL: "https://angular5crud-3897c.firebaseio.com",
-    projectId: "angular5crud-3897c",
-    storageBucket: "angular5crud-3897c.appspot.com",
-    messagingSenderId: "228657996049"
+    apiKey: "AIzaSyCCKi-gxrpQYdGOjnNcYFVLJBMOGcwYJHw",
+    authDomain: "hava-5e348.firebaseapp.com",
+    databaseURL: "https://hava-5e348.firebaseio.com",
+    projectId: "hava-5e348",
+    storageBucket: "",
+    messagingSenderId: "287104892635"
   }
 
 };
