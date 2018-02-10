@@ -1,8 +1,8 @@
 {
-  "name": "terang-quickstart-material",
+  "name": "HAVA",
   "version": "1.0.0",
   "private": true,
-  "description": "Quickstart TERANG Material",
+  "description": "This Project is a photo blog angular application",
   "keywords": [
     "angular",
     "components",
@@ -17,20 +17,19 @@
     "node": ">6.12.0",
     "npm": ">3"
   },
-  "repository": "https://github.com/canang/terang-quickstart-material.git",
+  "repository": "https://github.com/timothylampung/hava.git",
   "license": "MIT",
-  "author": "Terang LLP",
-  "contributors": [
-  ],
+  "author": "Timothy Lampung",
+  "contributors": [],
   "dependencies": {
     "@angular/animations": "^5.2.0",
+    "@angular/cdk": "^5.1.0",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/core": "^5.2.0",
     "@angular/flex-layout": "2.0.0-beta.12",
     "@angular/forms": "^5.2.0",
     "@angular/http": "^5.2.0",
-    "@angular/cdk": "^5.1.0",
     "@angular/material": "^5.1.0",
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
@@ -42,8 +41,11 @@
     "@covalent/http": "1.0.0-rc.4",
     "@covalent/markdown": "1.0.0-rc.4",
     "@swimlane/ngx-charts": "^7.0.1",
+    "angularfire": "^2.3.0",
+    "angularfire2": "^5.0.0-rc.6",
     "core-js": "^2.4.1",
     "d3": "^4.9.0",
+    "firebase": "^4.9.1",
     "hammerjs": "^2.0.8",
     "highlight.js": "9.10.0",
     "rxjs": "^5.5.6",
@@ -51,7 +53,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.6",
+    "@angular/cli": "1.6.8",
     "@angular/compiler-cli": "^5.2.0",
     "@types/hammerjs": "2.0.30",
     "@types/jasmine": "2.5.38",
@@ -75,6 +77,5 @@
     "tslint": "^5.2.0",
     "typescript": "~2.6.2"
   },
-  "optionalDependencies": {
-  }
+  "optionalDependencies": {}
 }
