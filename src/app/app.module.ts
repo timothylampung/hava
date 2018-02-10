@@ -37,7 +37,7 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],
-  providers: [AssetService],
+  providers: [AssetService,UserService],
   entryComponents: [AssetCreatorDialog],
   bootstrap: [AppComponent],
 })

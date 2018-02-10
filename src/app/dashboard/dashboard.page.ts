@@ -8,6 +8,7 @@ import {AssetCreatorDialog} from './asset-creator.dialog';
 import {User} from './user.interface';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from 'angularfire2/firestore';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'qs-dashboard',
@@ -19,18 +20,16 @@ export class DashboardPage implements OnInit, OnDestroy {
   user$ : Observable<User[]>;
   assets$: Observable<Asset[]>;
   creatorDialogRef: MatDialogRef<AssetCreatorDialog>;
-  postsCol: AngularFirestoreCollection<User>;
-  posts: Observable<User[]>;
-  loadUsers():void{
-    this.postsCol = this.afs.collection('users');
-    this.posts = this.postsCol.valueChanges();
 
+  loadUsers():void{
+    this.user$ = this.userService.findUsers();
   }
 
+
   // constructor
-  constructor(private db : AngularFireDatabase,
-              private afs : AngularFirestore,
+  constructor(
               private assetService: AssetService,
+              private userService : UserService,
               private router: Router,
               private route: ActivatedRoute,
               private vcf: ViewContainerRef,
